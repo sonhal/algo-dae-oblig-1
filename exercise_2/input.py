@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 from pathlib import Path
 from typing import List
 
@@ -25,10 +24,20 @@ class Input:
             self._instances.append(Problem(int(elements[1]), [int(value) for value in elements[2:]]))
 
 
-@dataclass
 class Problem:
-    K: int
-    selection: list
+
+    def __init__(self, K: int, selection: list):
+        self.K = K
+        self.selection = selection
 
     def __str__(self):
         return f"{len(self.selection)} {self.K}: {' '.join(str(value) for value in self.selection).rstrip(' ')}"
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and hash(other) == hash(self)
+
+    def __hash__(self):
+        h = hash(self.K)
+        for el in self.selection:
+            h += hash(el)
+        return h

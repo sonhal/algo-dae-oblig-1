@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 from typing import List
 
 from exercise_2.sum_of_selections import Result
