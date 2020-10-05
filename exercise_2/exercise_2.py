@@ -42,7 +42,7 @@ class Exercise2Rapport:
     def write(self, file):
         result = "\n\n".join(self.build()).rstrip().lstrip()
         with open(file, "w") as file:
-            file.write(result)
+            file.write(result + "\n")
 
     @staticmethod
     def _format_selection(value, selection: list):
