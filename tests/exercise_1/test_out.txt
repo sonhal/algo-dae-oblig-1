@@ -1,6 +1,0 @@
-internet:(internet)
-interview:(inter(net)(view))
-inter:(inter(net)(view))
-internet YES
-interview YES
-inter YES

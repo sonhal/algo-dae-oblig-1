@@ -1,7 +1,7 @@
 # Algorithms: Design and Efficiency
 ## Oblig 1
 ### Exercise 1: Trie
-Run the program
+**Run the program**
 ```bash
 python3 -m exercise_1 [-h] in_file out_file
 
@@ -36,7 +36,17 @@ can be composed with a solution from a lower value T[i-1, j - T[i]] for the valu
 The answer will occur in the final cell in row indexed by K's index in the range [0, S]. The cell can be represented as 
 such: solution = cell(n-1, K-1)
 
-Run the program
+**Run the program for Exercise 2**
 ```bash
+usage: python3 -m exercise_2  [-h] [--memoized] in_file out_file
 
+Sum of Selections
+
+positional arguments:
+  in_file         Input file with problem instances
+  out_file        output file name
+
+optional arguments:
+  -h, --help      show this help message and exit
+  --memoized, -m  use memoized strategy default is to use classical dynamic programming stategy
 ```

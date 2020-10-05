@@ -1,3 +1,4 @@
+import os
 import unittest
 from pathlib import Path
 
@@ -124,5 +125,6 @@ class TestTries(unittest.TestCase):
         print(result)
 
     def test_e2e(self):
-        file = "test_data_1.txt"
+        file = Path(__file__).parent.joinpath("test_data_1.txt").absolute()
         Exercise1(file).write_to_output("test_out.txt")
+        # os.remove("test_out.txt")

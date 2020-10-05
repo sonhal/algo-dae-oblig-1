@@ -7,8 +7,8 @@ class Trie:
     def __init__(self):
         self._root = Node.root()
 
-    def insert(self, key: str):
-        self._root.insert(key.lower())
+    def insert(self, word: str):
+        self._root.insert(word.lower())
 
     def search(self, key: str):
         key_list = [char for char in key.lower()]
@@ -45,6 +45,7 @@ class Trie:
                 result.append("(")
             return result
         return children
+
 
 class Node:
 

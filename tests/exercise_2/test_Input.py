@@ -1,18 +1,17 @@
 import os
 import tempfile
-import unittest
+from pathlib import Path
+from unittest import TestCase
 
-from exercise_2.exercise_2 import Exercise2
-from exercise_2.sum_of_selections import SumOfSelections
+from exercise_2.input import Input, Problem
 
 TEST_DATA = """
 5 14 1 5 6 3 10
 5 4 2 5 6 3 10 
-2 10 3 6
 """
 
 
-class TestExercise2(unittest.TestCase):
+class TestInput(TestCase):
 
     def setUp(self):
         self.testfilename = tempfile.mkstemp()[1]
@@ -24,5 +23,6 @@ class TestExercise2(unittest.TestCase):
         self.testfile.close()
         os.remove(self.testfilename)
 
-    def test_e2e(self):
-        Exercise2(self.testfilename, SumOfSelections).write_to_file("test_exe2.txt")
+    def test_instances(self):
+        e_input = Input(self.testfilename)
+        self.assertEqual([Problem(14, [1, 5, 6, 3, 10]), Problem(4, [2, 5, 6, 3, 10])], e_input.instances())
