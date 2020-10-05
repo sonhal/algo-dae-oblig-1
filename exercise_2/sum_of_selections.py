@@ -1,5 +1,4 @@
 from collections.abc import Sequence
-from dataclasses import dataclass
 from typing import List
 
 
@@ -124,12 +123,13 @@ class SumOfSelections:
         return None
 
 
-@dataclass
 class Result:
-    K: int
-    selection: list
-    satisfies: bool
-    satisfies_set: list
+
+    def __init__(self, K: int, selection: list, satisfies: bool, satisfies_set: list):
+        self.K = K
+        self.selection = selection
+        self.satisfies = satisfies
+        self.satisfies_set = satisfies_set
 
     @classmethod
     def false(cls, K, selection):
